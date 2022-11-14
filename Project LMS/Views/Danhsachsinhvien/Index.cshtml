@@ -13,7 +13,66 @@
 {
     <div class="form-group form-inline">
         <input type="text" name="SearchString" placeholder="Nhập tên sinh viên" class="form-control" />
+        @Html.DropDownList("SearchGrade", (IEnumerable<SelectListItem>)
+               (new[] {
+               new SelectListItem(){ Text = "Grade 6" },
+               new SelectListItem() { Text = "Grade 7" },
+               new SelectListItem() { Text = "Grade 8" },
+               new SelectListItem() { Text = "Grade 9" },
+               }), "Chọn khoa / khối", new { @class = "form-control" })
+
+        @Html.DropDownList("SearchClass", (IEnumerable<SelectListItem>
+                    )(new[] {
+                    new SelectListItem() { Text = "6A" },
+                    new SelectListItem() { Text = "6B" },
+                    new SelectListItem() { Text = "6C" },
+                    new SelectListItem() { Text = "6D" },
+                    new SelectListItem() { Text = "6E" },
+                    new SelectListItem() { Text = "6F" },
+                    new SelectListItem() { Text = "7A" },
+                    new SelectListItem() { Text = "7B" },
+                    new SelectListItem() { Text = "7C" },
+                    new SelectListItem() { Text = "7D" },
+                    new SelectListItem() { Text = "7E" },
+                    new SelectListItem() { Text = "7F" },
+                    new SelectListItem() { Text = "8A" },
+                    new SelectListItem() { Text = "8B" },
+                    new SelectListItem() { Text = "8C" },
+                    new SelectListItem() { Text = "8D" },
+                    new SelectListItem() { Text = "8E" },
+                    new SelectListItem() { Text = "8F" },
+                    new SelectListItem() { Text = "9A" },
+                    new SelectListItem() { Text = "9B" },
+                    new SelectListItem() { Text = "9C" },
+                    new SelectListItem() { Text = "9D" },
+                    new SelectListItem() { Text = "9E" },
+                    new SelectListItem() { Text = "9F" },
+                    }), "Chọn lớp", new { @class = "form-control" })
+
+        @Html.DropDownList("SearchObject", (IEnumerable<SelectListItem>
+                   )(new[] {
+                   new SelectListItem() { Text = "None" },
+                   new SelectListItem() { Text = "10%" },
+                   new SelectListItem() { Text = "20%" },
+                   new SelectListItem() { Text = "25%" },
+                   new SelectListItem() { Text = "30%" },
+                   new SelectListItem() { Text = "40%" },
+                   new SelectListItem() { Text = "50%" },
+                   new SelectListItem() { Text = "60%" },
+                   new SelectListItem() { Text = "70%" },
+                   new SelectListItem() { Text = "75%" },
+                   new SelectListItem() { Text = "80%" },
+                   new SelectListItem() { Text = "90%" },
+                   new SelectListItem() { Text = "100%" },
+                   }), "chọn đối tượng", new { @class = "form-control" })
+
+        @Html.DropDownList("SearchStatus", (IEnumerable<SelectListItem>
+                   )(new[] {
+                   new SelectListItem() { Text = "Đã đóng" },
+                   new SelectListItem() { Text = "Chưa đóng" },
+                   }), "Chọn trạng thái", new { @class = "form-control" })
         <input type="submit" class="btn btn-default" value="Tìm kiếm" />
+        <a  class="btn btn-default" href="~/Danhsachsinhvien/index" >Tất cả sinh viên</a>
     </div>
 }
 <table class="table">

@@ -4,7 +4,24 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="LMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="LMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Danh sách môn học">
+          <Key>
+            <PropertyRef Name="Mamonhoc" />
+          </Key>
+          <Property Name="Mamonhoc" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Monhoc" Type="nvarchar" MaxLength="50" />
+          <Property Name="Khoa_khoi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Donvitinh" Type="int" />
+          <Property Name="Trangthai" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tonghocphi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mucthumoidonvi" Type="int" />
+          <Property Name="Nienkhoa" Type="int" />
+          <Property Name="Thoiluong" Type="nvarchar" MaxLength="50" />
+          <Property Name="Thoiluongmonhoc" Type="int" />
+          <Property Name="Tonghocphiphaithu" Type="int" />
+          <Property Name="Nienkhoa1" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="Danh sách sinh viên">
           <Key>
             <PropertyRef Name="mahocvien" />
@@ -21,19 +38,6 @@
           <Property Name="thucthu" Type="nvarchar" MaxLength="50" />
           <Property Name="ngaythu" Type="date" />
         </EntityType>
-        <EntityType Name="Môn học">
-          <Key>
-            <PropertyRef Name="Mamonhoc" />
-          </Key>
-          <Property Name="Mamonhoc" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Monhoc" Type="nvarchar" MaxLength="50" />
-          <Property Name="Khoa_khoi" Type="nvarchar" MaxLength="50" />
-          <Property Name="Thoiluong" Type="int" />
-          <Property Name="Donvitinh" Type="nvarchar" MaxLength="50" />
-          <Property Name="Mucthutrendonvitinh" Type="nvarchar" MaxLength="50" />
-          <Property Name="Tonghocphiphaithu" Type="money" />
-          <Property Name="Trangthai" Type="nvarchar" MaxLength="50" />
-        </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -45,12 +49,11 @@
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityContainer Name="LMSModelStoreContainer">
+          <EntitySet Name="Danh sách môn học" EntityType="Self.Danh sách môn học" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Danh sách sinh viên" EntityType="Self.Danh sách sinh viên" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Môn học" EntityType="Self.Môn học" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="LMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -70,19 +73,6 @@
           <Property Name="thucthu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ngaythu" Type="DateTime" Precision="0" />
         </EntityType>
-        <EntityType Name="Môn_học">
-          <Key>
-            <PropertyRef Name="Mamonhoc" />
-          </Key>
-          <Property Name="Mamonhoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Monhoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Khoa_khoi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Thoiluong" Type="Int32" />
-          <Property Name="Donvitinh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Mucthutrendonvitinh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Tonghocphiphaithu" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="Trangthai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -95,9 +85,26 @@
         </EntityType>
         <EntityContainer Name="LMSEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Danh_sách_sinh_viên" EntityType="Self.Danh_sách_sinh_viên" />
-          <EntitySet Name="Môn_học" EntityType="Self.Môn_học" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="Danh_sách_môn_học" EntityType="LMSModel.Danh_sách_môn_học" />
         </EntityContainer>
+        <EntityType Name="Danh_sách_môn_học">
+          <Key>
+            <PropertyRef Name="Mamonhoc" />
+          </Key>
+          <Property Name="Mamonhoc" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Monhoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Khoa_khoi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Donvitinh" Type="Int32" />
+          <Property Name="Trangthai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tonghocphi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mucthumoidonvi" Type="Int32" />
+          <Property Name="Nienkhoa" Type="Int32" />
+          <Property Name="Thoiluong" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Thoiluongmonhoc" Type="Int32" />
+          <Property Name="Tonghocphiphaithu" Type="Int32" />
+          <Property Name="Nienkhoa1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -121,20 +128,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Môn_học">
-            <EntityTypeMapping TypeName="LMSModel.Môn_học">
-              <MappingFragment StoreEntitySet="Môn học">
-                <ScalarProperty Name="Mamonhoc" ColumnName="Mamonhoc" />
-                <ScalarProperty Name="Monhoc" ColumnName="Monhoc" />
-                <ScalarProperty Name="Khoa_khoi" ColumnName="Khoa_khoi" />
-                <ScalarProperty Name="Thoiluong" ColumnName="Thoiluong" />
-                <ScalarProperty Name="Donvitinh" ColumnName="Donvitinh" />
-                <ScalarProperty Name="Mucthutrendonvitinh" ColumnName="Mucthutrendonvitinh" />
-                <ScalarProperty Name="Tonghocphiphaithu" ColumnName="Tonghocphiphaithu" />
-                <ScalarProperty Name="Trangthai" ColumnName="Trangthai" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
             <EntityTypeMapping TypeName="LMSModel.sysdiagram">
               <MappingFragment StoreEntitySet="sysdiagrams">
@@ -143,6 +136,24 @@
                 <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
                 <ScalarProperty Name="version" ColumnName="version" />
                 <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Danh_sách_môn_học">
+            <EntityTypeMapping TypeName="LMSModel.Danh_sách_môn_học">
+              <MappingFragment StoreEntitySet="Danh sách môn học">
+                <ScalarProperty Name="Nienkhoa1" ColumnName="Nienkhoa1" />
+                <ScalarProperty Name="Tonghocphiphaithu" ColumnName="Tonghocphiphaithu" />
+                <ScalarProperty Name="Thoiluongmonhoc" ColumnName="Thoiluongmonhoc" />
+                <ScalarProperty Name="Thoiluong" ColumnName="Thoiluong" />
+                <ScalarProperty Name="Nienkhoa" ColumnName="Nienkhoa" />
+                <ScalarProperty Name="Mucthumoidonvi" ColumnName="Mucthumoidonvi" />
+                <ScalarProperty Name="Tonghocphi" ColumnName="Tonghocphi" />
+                <ScalarProperty Name="Trangthai" ColumnName="Trangthai" />
+                <ScalarProperty Name="Donvitinh" ColumnName="Donvitinh" />
+                <ScalarProperty Name="Khoa_khoi" ColumnName="Khoa_khoi" />
+                <ScalarProperty Name="Monhoc" ColumnName="Monhoc" />
+                <ScalarProperty Name="Mamonhoc" ColumnName="Mamonhoc" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

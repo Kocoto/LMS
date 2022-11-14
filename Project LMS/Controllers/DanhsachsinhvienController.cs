@@ -16,15 +16,31 @@ namespace WebApplication5.Controllers
     {
         private LMSEntities db = new LMSEntities();
         // GET: Danhsachsinhvien
-        public ActionResult Index(string SearchString = "")
+        public ActionResult Index(string SearchString = "", string searchGrade = "",
+            string searchClass = "", string searchObject = "", string searchStatus = "")
         {
-            //return View(db.Danh_sách_sinh_viên.ToList());
+            var dssinhvien = from x in db.Danh_sách_sinh_viên select x;
             if (SearchString != "")
             {
-                var dssinhvien = db.Danh_sách_sinh_viên.Where(x => x.tenhocvien.Contains(SearchString)).ToList();
-                return View(dssinhvien.ToList());
+                dssinhvien = dssinhvien.Where(x => x.tenhocvien.Contains(SearchString));
             }
-            return View(db.Danh_sách_sinh_viên.ToList());
+            if (searchClass != "")
+            {
+                dssinhvien = dssinhvien.Where(x => x.lop.Contains(searchClass));
+            }
+            if (searchStatus != "")
+            {
+                dssinhvien = dssinhvien.Where(x => x.trangthai.Contains(searchStatus));
+            }
+            if (searchGrade != "")
+            {
+                dssinhvien = dssinhvien.Where(x => x.khoa_khoi.Contains(searchGrade));
+            }
+            if (searchObject != "")
+            {
+                dssinhvien = dssinhvien.Where(x => x.doituong.Contains(searchObject));
+            }
+            return View(dssinhvien.ToList());
         }
         // GET: Danhsachsinhvien/Details/5
         public ActionResult Details(string id)

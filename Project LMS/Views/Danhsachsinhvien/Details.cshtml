@@ -93,6 +93,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Sửa", "Edit", new { id = Model.mahocvien }) |
-    @Html.ActionLink("Quay về", "Index")
+    <a class="btn btn-default" @Html.ActionLink("Sửa", "Edit", new { id = Model.mahocvien }) | </a>
+    <a class="btn btn-default" href="~/Danhsachsinhvien/Index">Quay lại</a>
 </p>
