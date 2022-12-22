@@ -5,6 +5,36 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="LMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Danh sách giáo viên">
+          <Key>
+            <PropertyRef Name="Magiangvien" />
+          </Key>
+          <Property Name="Magiangvien" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Hovaten" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mangach" Type="nvarchar" MaxLength="50" />
+          <Property Name="Chucvu" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tobomon" Type="nvarchar" MaxLength="50" />
+          <Property Name="Loaihopdong" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ngayvaotruong" Type="date" />
+          <Property Name="Nghiphep" Type="nvarchar" MaxLength="50" />
+          <Property Name="Trangthai" Type="nvarchar" MaxLength="50" />
+          <Property Name="Gioitinh" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ngaysinh" Type="date" />
+          <Property Name="SoCMND" Type="int" />
+          <Property Name="Ngaycap" Type="date" />
+          <Property Name="Noicap" Type="nvarchar" MaxLength="50" />
+          <Property Name="Diachi" Type="nvarchar" MaxLength="50" />
+          <Property Name="SoBHXH" Type="nvarchar" MaxLength="50" />
+          <Property Name="Trinhdodaotao" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ngayapdungchucvu" Type="date" />
+          <Property Name="Ngaybatdaulamviec" Type="date" />
+          <Property Name="Ngach/hang" Type="nvarchar" MaxLength="50" />
+          <Property Name="Bacluong" Type="nvarchar" MaxLength="50" />
+          <Property Name="Hesoluong" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ngayapdungngachbac" Type="date" />
+          <Property Name="Phucap" Type="nvarchar" MaxLength="50" />
+          <Property Name="Luongcoban" Type="int" />
+        </EntityType>
         <EntityType Name="Danh sách môn học">
           <Key>
             <PropertyRef Name="Mamonhoc" />
@@ -49,6 +79,7 @@
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityContainer Name="LMSModelStoreContainer">
+          <EntitySet Name="Danh sách giáo viên" EntityType="Self.Danh sách giáo viên" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Danh sách môn học" EntityType="Self.Danh sách môn học" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Danh sách sinh viên" EntityType="Self.Danh sách sinh viên" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
@@ -87,6 +118,7 @@
           <EntitySet Name="Danh_sách_sinh_viên" EntityType="Self.Danh_sách_sinh_viên" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="Danh_sách_môn_học" EntityType="LMSModel.Danh_sách_môn_học" />
+          <EntitySet Name="Danh_sách_giáo_viên" EntityType="LMSModel.Danh_sách_giáo_viên" />
         </EntityContainer>
         <EntityType Name="Danh_sách_môn_học">
           <Key>
@@ -104,6 +136,36 @@
           <Property Name="Thoiluongmonhoc" Type="Int32" />
           <Property Name="Tonghocphiphaithu" Type="Int32" />
           <Property Name="Nienkhoa1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Danh_sách_giáo_viên">
+          <Key>
+            <PropertyRef Name="Magiangvien" />
+          </Key>
+          <Property Name="Magiangvien" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Hovaten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mangach" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Chucvu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tobomon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Loaihopdong" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ngayvaotruong" Type="DateTime" Precision="0" />
+          <Property Name="Nghiphep" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Trangthai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Gioitinh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ngaysinh" Type="DateTime" Precision="0" />
+          <Property Name="SoCMND" Type="Int32" />
+          <Property Name="Ngaycap" Type="DateTime" Precision="0" />
+          <Property Name="Noicap" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Diachi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SoBHXH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Trinhdodaotao" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ngayapdungchucvu" Type="DateTime" Precision="0" />
+          <Property Name="Ngaybatdaulamviec" Type="DateTime" Precision="0" />
+          <Property Name="Ngach_hang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Bacluong" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Hesoluong" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ngayapdungngachbac" Type="DateTime" Precision="0" />
+          <Property Name="Phucap" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Luongcoban" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -154,6 +216,37 @@
                 <ScalarProperty Name="Khoa_khoi" ColumnName="Khoa_khoi" />
                 <ScalarProperty Name="Monhoc" ColumnName="Monhoc" />
                 <ScalarProperty Name="Mamonhoc" ColumnName="Mamonhoc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Danh_sách_giáo_viên">
+            <EntityTypeMapping TypeName="LMSModel.Danh_sách_giáo_viên">
+              <MappingFragment StoreEntitySet="Danh sách giáo viên">
+                <ScalarProperty Name="Luongcoban" ColumnName="Luongcoban" />
+                <ScalarProperty Name="Phucap" ColumnName="Phucap" />
+                <ScalarProperty Name="Ngayapdungngachbac" ColumnName="Ngayapdungngachbac" />
+                <ScalarProperty Name="Hesoluong" ColumnName="Hesoluong" />
+                <ScalarProperty Name="Bacluong" ColumnName="Bacluong" />
+                <ScalarProperty Name="Ngach_hang" ColumnName="Ngach/hang" />
+                <ScalarProperty Name="Ngaybatdaulamviec" ColumnName="Ngaybatdaulamviec" />
+                <ScalarProperty Name="Ngayapdungchucvu" ColumnName="Ngayapdungchucvu" />
+                <ScalarProperty Name="Trinhdodaotao" ColumnName="Trinhdodaotao" />
+                <ScalarProperty Name="SoBHXH" ColumnName="SoBHXH" />
+                <ScalarProperty Name="Diachi" ColumnName="Diachi" />
+                <ScalarProperty Name="Noicap" ColumnName="Noicap" />
+                <ScalarProperty Name="Ngaycap" ColumnName="Ngaycap" />
+                <ScalarProperty Name="SoCMND" ColumnName="SoCMND" />
+                <ScalarProperty Name="Ngaysinh" ColumnName="Ngaysinh" />
+                <ScalarProperty Name="Gioitinh" ColumnName="Gioitinh" />
+                <ScalarProperty Name="Trangthai" ColumnName="Trangthai" />
+                <ScalarProperty Name="Nghiphep" ColumnName="Nghiphep" />
+                <ScalarProperty Name="Ngayvaotruong" ColumnName="Ngayvaotruong" />
+                <ScalarProperty Name="Loaihopdong" ColumnName="Loaihopdong" />
+                <ScalarProperty Name="Tobomon" ColumnName="Tobomon" />
+                <ScalarProperty Name="Chucvu" ColumnName="Chucvu" />
+                <ScalarProperty Name="Mangach" ColumnName="Mangach" />
+                <ScalarProperty Name="Hovaten" ColumnName="Hovaten" />
+                <ScalarProperty Name="Magiangvien" ColumnName="Magiangvien" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

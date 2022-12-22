@@ -1,0 +1,19 @@
+﻿.infor_teacher{
+    height:300px;
+    width:100%;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+   justify-content: space-around;
+
+}
+.infor-right{
+    width:45%;
+    height:100%;
+    flex-direction:column;
+}
+.infor-left {
+    width: 45%;
+    height: 100%;
+    flex-direction: column;
+}

@@ -1,0 +1,81 @@
+﻿@model IEnumerable<Project_LMS.Models.Danh_sách_giáo_viên>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Danh sách giảng viên</h2>
+
+<p>
+    @Html.ActionLink("Thêm giảng viên mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Mã giảng viên
+        </th>
+        <th>
+            Họ và tên
+        </th>
+        <th>
+            Mã ngạch
+        </th>
+        <th>
+            Chức vụ
+        </th>
+        <th>
+            Tổ bộ môn
+        </th>
+        <th>
+            Loại hợp đồng
+        </th>
+        <th>
+            Ngày vào trường
+        </th>
+        <th>
+            Nghỉ phép
+        </th>
+        <th>
+            Trạng thái
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Magiangvien)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hovaten)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mangach)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Chucvu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tobomon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Loaihopdong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ngayvaotruong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nghiphep)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Trangthai)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Magiangvien }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Magiangvien }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Magiangvien })
+        </td>
+    </tr>
+}
+
+</table>

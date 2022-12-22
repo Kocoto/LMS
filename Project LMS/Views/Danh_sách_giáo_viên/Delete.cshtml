@@ -1,0 +1,208 @@
+﻿@model Project_LMS.Models.Danh_sách_giáo_viên
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Danh_sách_giáo_viên</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Hovaten)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hovaten)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mangach)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mangach)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Chucvu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Chucvu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tobomon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tobomon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Loaihopdong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Loaihopdong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ngayvaotruong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ngayvaotruong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nghiphep)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nghiphep)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Trangthai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Trangthai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gioitinh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gioitinh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ngaysinh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ngaysinh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoCMND)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoCMND)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ngaycap)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ngaycap)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Noicap)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Noicap)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Diachi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Diachi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoBHXH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoBHXH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Trinhdodaotao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Trinhdodaotao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ngayapdungchucvu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ngayapdungchucvu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ngaybatdaulamviec)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ngaybatdaulamviec)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ngach_hang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ngach_hang)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bacluong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bacluong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hesoluong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hesoluong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ngayapdungngachbac)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ngayapdungngachbac)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phucap)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phucap)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

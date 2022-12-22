@@ -28,5 +28,6 @@ namespace Project_LMS.Models
         public virtual DbSet<Danh_sách_sinh_viên> Danh_sách_sinh_viên { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Danh_sách_môn_học> Danh_sách_môn_học { get; set; }
+        public virtual DbSet<Danh_sách_giáo_viên> Danh_sách_giáo_viên { get; set; }
     }
 }

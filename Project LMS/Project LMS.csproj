@@ -131,9 +131,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DanhsachmonhocController.cs" />
     <Compile Include="Controllers\DanhsachsinhvienController.cs" />
+    <Compile Include="Controllers\Danh_sách_giáo_viênController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Danh_sách_giáo_viên.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Danh_sách_môn_học.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -166,6 +170,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\StyleSheet1.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -225,6 +230,11 @@
     <Content Include="Views\Danhsachmonhoc\Details.cshtml" />
     <Content Include="Views\Danhsachmonhoc\Edit.cshtml" />
     <Content Include="Views\Danhsachmonhoc\Index.cshtml" />
+    <Content Include="Views\Danh_sách_giáo_viên\Create.cshtml" />
+    <Content Include="Views\Danh_sách_giáo_viên\Delete.cshtml" />
+    <Content Include="Views\Danh_sách_giáo_viên\Details.cshtml" />
+    <Content Include="Views\Danh_sách_giáo_viên\Edit.cshtml" />
+    <Content Include="Views\Danh_sách_giáo_viên\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

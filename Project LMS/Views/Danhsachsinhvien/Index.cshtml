@@ -15,10 +15,10 @@
         <input type="text" name="SearchString" placeholder="Nhập tên sinh viên" class="form-control" />
         @Html.DropDownList("SearchGrade", (IEnumerable<SelectListItem>)
                (new[] {
-               new SelectListItem(){ Text = "Grade 6" },
-               new SelectListItem() { Text = "Grade 7" },
-               new SelectListItem() { Text = "Grade 8" },
-               new SelectListItem() { Text = "Grade 9" },
+               new SelectListItem(){ Text = "Khối 6" },
+               new SelectListItem() { Text = "Khối 7" },
+               new SelectListItem() { Text = "Khối 8" },
+               new SelectListItem() { Text = "Khối 9" },
                }), "Chọn khoa / khối", new { @class = "form-control" })
 
         @Html.DropDownList("SearchClass", (IEnumerable<SelectListItem>
