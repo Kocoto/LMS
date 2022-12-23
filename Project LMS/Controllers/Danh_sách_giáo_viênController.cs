@@ -15,9 +15,27 @@ namespace Project_LMS.Controllers
         private LMSEntities db = new LMSEntities();
 
         // GET: Danh_sách_giáo_viên
-        public ActionResult Index()
+        public ActionResult Index(string SearchString = "", string Searchtobomon = "", string Searchloaihopdong = "", string Searchtrangthai = "")
         {
-            return View(db.Danh_sách_giáo_viên.ToList());
+            //return View(db.Danh_sách_giáo_viên.ToList());
+            var dsgiaovien = from x in db.Danh_sách_giáo_viên select x;
+            if (SearchString != "")
+            {
+                dsgiaovien = dsgiaovien.Where(x => x.Hovaten.Contains(SearchString));
+            }
+            if (Searchtobomon != "")
+            {
+                dsgiaovien = dsgiaovien.Where(x => x.Tobomon.Contains(Searchtobomon));
+            }
+            if (Searchloaihopdong != "")
+            {
+                dsgiaovien = dsgiaovien.Where(x => x.Loaihopdong.Contains(Searchloaihopdong));
+            }
+            if (Searchtrangthai != "")
+            {
+                dsgiaovien = dsgiaovien.Where(x => x.Trangthai.Contains(Searchtrangthai));
+            }
+            return View(dsgiaovien.ToList());
         }
 
         // GET: Danh_sách_giáo_viên/Details/5
@@ -46,7 +64,7 @@ namespace Project_LMS.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Magiangvien,Hovaten,Mangach,Chucvu,Tobomon,Loaihopdong,Ngayvaotruong,Nghiphep,Trangthai,Gioitinh,Ngaysinh,SoCMND,Ngaycap,Noicap,Diachi,SoBHXH,Trinhdodaotao,Ngayapdungchucvu,Ngaybatdaulamviec,Ngach_hang,Bacluong,Hesoluong,Ngayapdungngachbac,Phucap")] Danh_sách_giáo_viên danh_sách_giáo_viên)
+        public ActionResult Create([Bind(Include = "Magiangvien,Hovaten,Mangach,Chucvu,Tobomon,Loaihopdong,Ngayvaotruong,Nghiphep,Trangthai,Gioitinh,Ngaysinh,SoCMND,Ngaycap,Noicap,Diachi,SoBHXH,Trinhdodaotao,Ngayapdungchucvu,Ngaybatdaulamviec,Ngach_hang,Bacluong,Hesoluong,Ngayapdungngachbac,Phucap,Luongcoban")] Danh_sách_giáo_viên danh_sách_giáo_viên)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +96,7 @@ namespace Project_LMS.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Magiangvien,Hovaten,Mangach,Chucvu,Tobomon,Loaihopdong,Ngayvaotruong,Nghiphep,Trangthai,Gioitinh,Ngaysinh,SoCMND,Ngaycap,Noicap,Diachi,SoBHXH,Trinhdodaotao,Ngayapdungchucvu,Ngaybatdaulamviec,Ngach_hang,Bacluong,Hesoluong,Ngayapdungngachbac,Phucap")] Danh_sách_giáo_viên danh_sách_giáo_viên)
+        public ActionResult Edit([Bind(Include = "Magiangvien,Hovaten,Mangach,Chucvu,Tobomon,Loaihopdong,Ngayvaotruong,Nghiphep,Trangthai,Gioitinh,Ngaysinh,SoCMND,Ngaycap,Noicap,Diachi,SoBHXH,Trinhdodaotao,Ngayapdungchucvu,Ngaybatdaulamviec,Ngach_hang,Bacluong,Hesoluong,Ngayapdungngachbac,Phucap,Luongcoban")] Danh_sách_giáo_viên danh_sách_giáo_viên)
         {
             if (ModelState.IsValid)
             {

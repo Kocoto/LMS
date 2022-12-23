@@ -4,14 +4,14 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Danh sách giáo viên</h2>
 
 <div>
-    <h4>Danh_sách_giáo_viên</h4>
+    <h4>Thông tin giáo viên</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Hovaten)
+            Họ và tên
         </dt>
 
         <dd>
@@ -19,7 +19,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Mangach)
+            Mã ngạch
         </dt>
 
         <dd>
@@ -27,7 +27,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Chucvu)
+            Chức vụ
         </dt>
 
         <dd>
@@ -35,7 +35,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Tobomon)
+            Tổ bộ môn
         </dt>
 
         <dd>
@@ -43,7 +43,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Loaihopdong)
+            Loại hợp đồng
         </dt>
 
         <dd>
@@ -51,7 +51,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Ngayvaotruong)
+            Ngày vào trường 
         </dt>
 
         <dd>
@@ -59,7 +59,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Nghiphep)
+            Nghỉ phép
         </dt>
 
         <dd>
@@ -67,7 +67,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Trangthai)
+            Trạng thái
         </dt>
 
         <dd>
@@ -75,7 +75,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Gioitinh)
+            Giới tính
         </dt>
 
         <dd>
@@ -83,7 +83,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Ngaysinh)
+            Ngày sinh
         </dt>
 
         <dd>
@@ -91,7 +91,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.SoCMND)
+            Số CMND
         </dt>
 
         <dd>
@@ -99,7 +99,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Ngaycap)
+            Ngày cấp
         </dt>
 
         <dd>
@@ -107,7 +107,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Noicap)
+            Nơi cấp
         </dt>
 
         <dd>
@@ -115,7 +115,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Diachi)
+            Địa chỉ
         </dt>
 
         <dd>
@@ -123,7 +123,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.SoBHXH)
+            Số BHXH
         </dt>
 
         <dd>
@@ -131,7 +131,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Trinhdodaotao)
+            Trình độ đào tạo
         </dt>
 
         <dd>
@@ -139,7 +139,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Ngayapdungchucvu)
+            Ngày áp dụng chức vụ 
         </dt>
 
         <dd>
@@ -147,7 +147,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Ngaybatdaulamviec)
+            Ngày bắt đầu làm việc
         </dt>
 
         <dd>
@@ -155,7 +155,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Ngach_hang)
+            Ngạch / hạng
         </dt>
 
         <dd>
@@ -163,7 +163,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Bacluong)
+            Bậc lương
         </dt>
 
         <dd>
@@ -171,7 +171,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Hesoluong)
+            Hệ số lương
         </dt>
 
         <dd>
@@ -179,7 +179,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Ngayapdungngachbac)
+            Ngày áp dụng ngạch bậc
         </dt>
 
         <dd>
@@ -187,7 +187,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Phucap)
+            Phụ cấp
         </dt>
 
         <dd>
@@ -197,6 +197,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Magiangvien }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Chỉnh sửa thông tin giáo viên", "Edit", new { id = Model.Magiangvien }) |
+    @Html.ActionLink("Quay về", "Index")
 </p>
